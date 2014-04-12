@@ -264,9 +264,20 @@ Full-Width Styles
 
 .inner {
   position: relative;
-  max-width: 640px;
+  /*max-width: 640px;*/
+  max-width: 960px;
   padding: 20px 10px;
   margin: 0 auto;
+}
+
+#title-container {
+  float: left;
+  margin: 0 0 0 20px;
+}
+
+#title-container > h4 {
+  color: #fff;
+  margin-top: 22px;
 }
 
 #forkme_banner {
@@ -282,6 +293,14 @@ Full-Width Styles
   box-shadow: 0 0 10px rgba(0,0,0,.5);
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
+  -moz-transition: opacity 0.5s ease-in;
+  -webkit-transition: opacity 0.5s ease-in;
+  -o-transition: opacity 0.5s ease-in;
+  transition: opacity 0.5s ease-in;
+}
+
+#forkme_banner:hover {
+  opacity: 1 !important;
 }
 
 #header_wrap {
@@ -294,15 +313,19 @@ Full-Width Styles
 }
 
 #header_wrap .inner {
-  padding: 50px 10px 30px 10px;
+  overflow: hidden;
+  /*padding: 50px 10px 30px 10px;*/
 }
 
 #project_title {
-  margin: 0;
   color: #fff;
   font-size: 42px;
   font-weight: 700;
   text-shadow: #111 0px 0px 10px;
+}
+
+#portrait {
+  float: left;
 }
 
 #project_tagline {
