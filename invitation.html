@@ -52,10 +52,12 @@
                     data.debug = false;
                     data.jsApiList = ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo', 'addCard', 'chooseCard', 'openCard'];
                     //通过config接口注入权限验证配置
+                    alert("wx=", wx);
                     wx.config(data);
                     //通过ready接口处理成功验证
                     wx.ready(function () {
                         //分享到朋友圈
+                        alert("分享给朋友圈");
                         wx.onMenuShareTimeline({
                             title: meta.dataset.lineTitle || document.title + '，敬请访问！',
                             // 分享标题
@@ -72,6 +74,7 @@
                             }
                         });
                         //分享给朋友
+                        alert("分享给朋友");
                         wx.onMenuShareAppMessage({
                             title: meta.dataset.msgTitle || document.title,
                             // 分享标题
