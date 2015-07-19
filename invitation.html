@@ -34,26 +34,242 @@
         .m-page .page-con {
             position: relative;
             width: 100%;
-            height: 101%;
+            height: 100%;
             overflow: hidden;
         }
 
-        .translate-back {
+        .pages {
             position: relative;
             width: 100%;
             height: 100%;
+            background-color: rgba(0, 0, 0, .1);
+            overflow: hidden;
         }
+        
+        .page1 .mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /*background-color: rgba(243, 139, 141, .9);*/
+        }
+
+        .page1 .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 100px;
+            color: #e84e40;
+            font-size: 60px;
+            margin-top: -120px;
+            margin-left: -40px;
+
+            -webkit-transform-origin: 50% 0%;
+            -webkit-animation: "chifanla-anim" 1.5s ease-in-out 1s infinite alternate;
+        }
+
+        @-webkit-keyframes 'chifanla-anim' {
+            0%, 10% {
+                -webkit-transform: rotate(20deg);
+            }
+            90%, 100% {
+                -webkit-transform: rotate(-20deg);
+            }
+        }
+
+        .u-arrow {
+            width: 60px;
+            height: 60px;
+            background: black;
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            margin-left: -30px;
+            border-radius: 30px;
+            opacity: 0.5;
+            z-index: 10000;
+        }
+
+        .u-arrow .u-guideTop {
+            width: 40px;
+            height: 40px;
+            background: url(http://gtms03.alicdn.com/tps/i3/TB1WXrLIFXXXXXtapXXAwR.FpXX-1024-1024.png_80x80.jpg) center no-repeat;
+            position: absolute;
+            left: 50%;
+            /* bottom: 50px; */
+            margin-left: -20px;
+            display: block;
+            z-index: 9998;
+            text-decoration: none;
+            background-size: 40px;
+            -webkit-animation: guideTop 1.5s ease-out infinite;
+        }
+
+        @-webkit-keyframes 'guideTop' {
+            0% {
+                -webkit-transform: translate3d(0, 20px, 0);
+                opacity: 0;
+            }
+            50%, 70% {
+                -webkit-transform: translate3d(0, 0, 0);
+                opacity: 1;
+            }
+            100% {
+                -webkit-transform: translate3d(0, -20px, 0);
+                opacity: 0;
+            }
+        }
+
+        .item {
+            width: 80%;
+            height: 40px;
+            line-height: 40px;
+            margin: 5px auto 20px;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            opacity: 0;
+            text-indent: 10px;
+        }
+
+        .label {
+            width: 80%;
+            height: 18px;
+            line-height: 18px;
+            text-align: left;
+            color: #259b24;
+            font-size: 14px;
+            margin: 0 auto;
+            font-weight: bold;
+        }
+
+        .theme {
+            width: 80%;
+            height: 40px;
+            line-height: 40px;
+            margin: 15% auto 0;
+            text-align: center;
+            color: #259b24;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .author {
+            width: 80%;
+            height: 14px;
+            line-height: 10px;
+            margin: 0 auto 10%;
+            text-align: right;
+            color: #259b24;
+            font-size: 14px;
+            font-weight: bold;
+            padding-right: 25px;
+            box-sizing: border-box;
+        }
+
+        .item.first {
+        background-color: #4dd0e1;
+        -webkit-transform: translate3d(0, 50px, 0);
+    }
+
+        .item.second {
+            background-color: #aed581;
+            -webkit-transform: translate3d(0, 50px, 0);
+        }
+
+        .first.show {
+            -webkit-transition: -webkit-transform 1s ease-out, opacity .5s ease-in;
+        }
+
+        .second.show {
+            -webkit-transition: -webkit-transform 1s ease-out .5s, opacity .5s ease-in .5s;
+        }
+
+        .item.show {
+            opacity: 1;
+            -webkit-transform: translate3d(0, 0, 0) !important;
+        }
+
+        .copyright {
+            position: absolute;
+            width: 80%;
+            bottom: 3px;
+            left: 10%;
+            font-size: 12px;
+            color: rgba(233, 233, 233, .2);
+            text-align: center;
+            font-family: arial, tahoma;
+        }
+
+        @media screen and (max-device-width: 321px) {
+            .theme {
+                font-size: 18px;
+            }
+
+            .item {
+                font-size: 14px;
+            }
+        }
+
+        .lai {
+            width: 70px;
+            margin: 25% auto;
+            font-size: 18px;
+            height: 70px;
+            line-height: 18px;
+            background-color: #259b24;
+            color: white;
+            border-radius: 35px;
+            text-align: center;
+            padding-top: 17px;
+            box-sizing: border-box;
+            -webkit-transform: scale(1);
+            -webkit-animation: "lai-anim" 2s ease-in-out 2s;
+        }
+
+        @-webkit-keyframes 'lai-anim' {
+            0% {
+                -webkit-transform: scale(1);
+            }
+            50%, 70% {
+                -webkit-transform: scale(1.5);
+            }
+            100% {
+                -webkit-transform: scale(1);
+            }
+        }
+
     </style>
 </head>
 <body>
-<div class="translate-back z-pos">
+<!-- 微信分享使用 -->
+<div style="display:none;">
+    <img src="./images/chef.jpg" />
+</div>
+<div class="pages">
     <div class="m-page page1">
-        <div class="page-con" style="background-image: url(./images/pic1.jpg); background-size: cover !important; background-position: 0% 0%;">
+        <div class="page-con" style="background-image: url(./images/star_bg.jpg); background-size: cover !important; background-position: 0% 0%;">
+            <div class="mask"></div>
+            <div class="text">聚餐啦</div>
         </div>
+        <section class="u-arrow">
+            <a href="javascript:void(0);" class="u-guideTop z-move"></a>
+        </section>
     </div>
 
     <div class="m-page f-hide page2">
-        <div class="page-con" style="background-image: url(./images/pic2.jpg); background-size: cover !important; background-position: 0% 0%;">
+        <div class="page-con" style="background-image: url(./images/invitation-detail.jpg); background-size: cover !important; background-position: 0% 0%;">
+            <div class="theme">一起吃黄牛肉吧！</div>
+            <div class="author">@书三</div>
+            <div class="label">时间</div>
+            <div class="item first">2015年07月21日，星期二，晚上七点</div>
+            <div class="label">地址：</div>
+            <div class="item second">中国凉都黄牛肉馆&middot;联兴路</div>
+            <div class="lai">一定要来哦!</div>
+            <div class="copyright">PUBLISHED BY SEYMOURMAO. JUST HAVE HUN.</div>
         </div>
     </div>
 </div>
@@ -63,6 +279,22 @@
 <script src="./js/zepto.js"></script>
 <script src="./js/cardmove.js"></script>
 <script>
-    CardMove(".translate-back");
+    CardMove(".pages");
+    document.querySelector(".pages").addEventListener('cdTransitionEnd', function (e) {
+        if ($(e.currentPage).hasClass("page2")) {
+            $(".item").addClass("show");
+        }
+
+    }, false);
+
+    document.querySelector(".lai").addEventListener('webkitAnimationEnd', function (e) {
+        $(e.target).css({
+            "line-height": "70px",
+            "padding-top": 0,
+            "font-size": "24px"
+        });
+        $(e.target).html("要来");
+    }, false);
+
 </script>
 </html>

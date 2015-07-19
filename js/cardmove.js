@@ -111,14 +111,12 @@
         //滑动没超过MINY,不动作
         var dir = swipeDirection(self.startPageY, pageY);
         if (dir === 0) {
-            console.log("removeEvent")
             //removeEvent(self.element, "touchend", self, false);
             return;
         }
 
         if (dir === UP && self.nextPage) {
             if (!self.moving) {
-                console.log("init set")
                 self.moving = true;
                 setStyle(self.nextPage.style, {
                     "transitionDuration": "0ms",
@@ -126,12 +124,10 @@
                 });
                 $(self.nextPage).addClass("active").removeClass("f-hide");
             } else {
-                //console.log("move")
                 setStyle(self.currentPage.style, {
                     "transitionDuration": "0ms",
                     "-webkit-transform": "translate3d(0, -" + Math.min(self.clientHeight, Math.abs(self.startPageY - pageY)/10) + "px, 0) scale(" + (1 - (Math.abs(self.startPageY - pageY) / self.clientHeight * 0.2) ) +")"
                 });
-                //console.log("Math.abs(self.startPageY - pageY)", "translate3d(0, " + (self.clientHeight - Math.abs(self.startPageY - pageY)) + "px, 0)");
                 setStyle(self.nextPage.style, {
                     "transitionDuration": "0ms",
                     "-webkit-transform": "translate3d(0, " + (self.clientHeight - Math.abs(self.startPageY - pageY)) + "px, 0)"
@@ -139,7 +135,6 @@
             }
         } else if (dir === DOWN && self.prePage) {
             if (!self.moving) {
-                console.log("DOWN init set")
                 self.moving = true;
                 setStyle(self.prePage.style, {
                     "transitionDuration": "0ms",
@@ -148,13 +143,10 @@
                 $(self.prePage).addClass("active").removeClass("f-hide");
                 //$(self.currentPage).removeClass("active");
             } else {
-                console.log("down current page", (Math.abs(self.startPageY - pageY) / 10));
                 setStyle(self.currentPage.style, {
                     "transitionDuration": "0ms",
                     "webkitTransform": "translate3d(0, " + (Math.abs(self.startPageY - pageY) / 10) + "px, 0) scale(" + (1 - (Math.abs(self.startPageY - pageY) / self.clientHeight * 0.2) ) + ")"
                 });
-                //console.log("Math.abs(self.startPageY - pageY)", "translate3d(0, " + (self.clientHeight - Math.abs(self.startPageY - pageY)) + "px, 0)");
-                console.log("(Math.abs(self.startPageY - pageY) - self.clientHeight)", (Math.abs(self.startPageY - pageY) - self.clientHeight));
                 setStyle(self.prePage.style, {
                     "transitionDuration": "0ms",
                     "webkitTransform": "translate3d(0, " + (Math.abs(self.startPageY - pageY) - self.clientHeight) + "px, 0)"
@@ -217,6 +209,7 @@
             self.prePage = null;
         }
         self.transition = false;
+        self._triggerEvent('cdTransitionEnd', true, false, {"currentPage": self.currentPage});
     }
 
     CardMove.prototype._triggerEvent = function (type, bubbles, cancelable, data) {
