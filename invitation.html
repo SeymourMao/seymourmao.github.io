@@ -65,17 +65,17 @@
             font-size: 60px;
             margin-top: -120px;
             margin-left: -40px;
-
+            -webkit-transform: rotate(-20deg);
             -webkit-transform-origin: 50% 0%;
             -webkit-animation: "chifanla-anim" 1.5s ease-in-out 1s infinite alternate;
         }
 
         @-webkit-keyframes 'chifanla-anim' {
             0%, 10% {
-                -webkit-transform: rotate(20deg);
+                -webkit-transform: rotate(-20deg);
             }
             90%, 100% {
-                -webkit-transform: rotate(-20deg);
+                -webkit-transform: rotate(20deg);
             }
         }
 
@@ -227,7 +227,7 @@
             padding-top: 17px;
             box-sizing: border-box;
             -webkit-transform: scale(1);
-            -webkit-animation: "lai-anim" 2s ease-in-out 2s;
+            -webkit-animation: "lai-anim" 2s ease-in-out 1.5s;
         }
 
         @-webkit-keyframes 'lai-anim' {
