@@ -1,0 +1,16 @@
+{
+    "name": "seymourmao.github.io",
+    "description": "Frontend design",
+    "version": "1.0.0",
+    "author": "seymour.mao@gmail.com",
+    "devDependencies": {
+        "colors": "^0.6.2",
+        "del": "^0.1.3",
+        "gulp": "3",
+        "gulp-code": "*",
+        "gulp-if": "*",
+        "gulp-less": "*",
+        "gulp-plumber": "^0.6.5",
+        "yargs": "~3.8.0"
+    }
+}
