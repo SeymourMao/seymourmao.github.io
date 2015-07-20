@@ -123,6 +123,7 @@
         }
 
         .item {
+            position: relative;
             width: 80%;
             height: 40px;
             line-height: 40px;
@@ -137,6 +138,7 @@
         }
 
         .label {
+            position: relative;
             width: 80%;
             height: 18px;
             line-height: 18px;
@@ -148,6 +150,7 @@
         }
 
         .theme {
+            position: relative;
             width: 80%;
             height: 40px;
             line-height: 40px;
@@ -158,6 +161,7 @@
             font-weight: bold;
         }
         .author {
+            position: relative;
             width: 80%;
             height: 14px;
             line-height: 10px;
@@ -171,12 +175,14 @@
         }
 
         .item.first {
-        background-color: #4dd0e1;
+        /*background-color: #4dd0e1;*/
+        background-color: rgba(77, 208, 225, .9);
         -webkit-transform: translate3d(0, 50px, 0);
     }
 
         .item.second {
-            background-color: #aed581;
+            /*background-color: #aed581;*/
+            background-color: rgba(174, 213, 129, .9);
             -webkit-transform: translate3d(0, 50px, 0);
         }
 
@@ -215,12 +221,14 @@
         }
 
         .lai {
+            position: relative;
             width: 70px;
             margin: 25% auto;
             font-size: 18px;
             height: 70px;
             line-height: 18px;
-            background-color: #259b24;
+            /*background-color: #259b24;*/
+            background-color: rgba(37, 155, 36, .8);
             color: white;
             border-radius: 35px;
             text-align: center;
@@ -240,6 +248,20 @@
             100% {
                 -webkit-transform: scale(1);
             }
+        }
+
+        .page2 .page-con > div {
+            z-index: 10;
+        }
+
+        .page2 .page-con .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, .5);
+            z-index: 1;
         }
 
     </style>
@@ -262,6 +284,7 @@
 
     <div class="m-page f-hide page2">
         <div class="page-con" style="background-image: url(./images/invitation-detail.jpg); background-size: cover !important; background-position: 0% 0%;">
+            <div class="cover"></div>
             <div class="theme">一起吃黄牛肉吧！</div>
             <div class="author">@书三</div>
             <div class="label">时间：</div>
