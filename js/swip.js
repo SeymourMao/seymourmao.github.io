@@ -135,7 +135,7 @@
                    var clientWidth = clientRect.width;
                    var clientHeight = clientRect.height;
                     this.mask = this.mask || this.createElement("canvas", {
-                        style: "position:fixed;left:50%;top:0;width:" + clientWidth + "px;margin-left:-" + clientWidth/2 + "px;height:100%;background-color:transparent;"
+                        style: "position:absolute;left:50%;top:0;width:" + clientWidth + "px;margin-left:-" + clientWidth/2 + "px;height:100%;background-color:transparent;"
                     });
                     this.mask.style.zIndex = 20,
                 this.conNode.innerHTML.replace(/[\w\W]| /g, "");
