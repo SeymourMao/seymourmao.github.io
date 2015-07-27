@@ -113,18 +113,27 @@
         .poem-content {
             -webkit-transition: -webkit-transform 1s ease-in;
             transition: transform 1s ease-in;
-            -webkit-transform: scale(.0001) translateZ(0);
-            transform: scale(.0001) translateZ(0);
+            -webkit-transform: scale(.00001) translateZ(1000px);
+            transform: scale(.00001) translateZ(1000px);
+            -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
-            perspective: 500px;
-            -webkit-perspective: 500px;
         }
 
         .poem-content.show {
-            -webkit-transform: scale(1) translateZ(100px);
-            transform: scale(1) translateZ(100px);
+            -webkit-transform: scale(1) translateZ(0);
+            transform: scale(1) translateZ(0);
         }
 
+        .copyright {
+            position: absolute;
+            width: 80%;
+            bottom: 3px;
+            left: 10%;
+            font-size: 12px;
+            color: rgba(233, 233, 233, .4);
+            text-align: center;
+            font-family: arial, tahoma;
+        }
 
     </style>
 </head>
@@ -151,6 +160,7 @@
 
             <p class="verse verse4">淡妆浓抹总相宜。</p>
         </div>
+        <div class="copyright">PUBLISHED BY SEYMOURMAO. FOR FUN.</div>
     </div>
 </div>
 
