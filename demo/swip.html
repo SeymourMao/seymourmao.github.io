@@ -66,18 +66,6 @@
             background-position: top left !important;
         }
 
-        /*#j-mengban {*/
-            /*-webkit-transition: -webkit-transform 1350ms ease-in;*/
-            /*transition: transform 1350ms ease-in;*/
-            /*perspective: 500px;*/
-            /*-webkit-perspective: 500px;  Safari 和 Chrome*/
-        /*}*/
-
-        /*#j-mengban.hide {*/
-            /*-webkit-transform: scale(.0001) rotate(360deg);*/
-            /*transform: scale(.0001) rotate(540deg);*/
-        /*}*/
-
         .loading {
             position: fixed;
             top: 0;
@@ -122,6 +110,21 @@
             margin: 0 auto 2%;
         }
 
+        .poem-content {
+            -webkit-transition: -webkit-transform 1s ease-in;
+            transition: transform 1s ease-in;
+            -webkit-transform: scale(.0001) translateZ(0);
+            transform: scale(.0001) translateZ(0);
+            transform-style: preserve-3d;
+            perspective: 500px;
+            -webkit-perspective: 500px;
+        }
+
+        .poem-content.show {
+            -webkit-transform: scale(1) translateZ(100px);
+            transform: scale(1) translateZ(100px);
+        }
+
 
     </style>
 </head>
@@ -135,16 +138,19 @@
 </div>
 <div class="m-page m-fengye">
     <div class="page-con lazy-finish" style="background-image: url(../images/swipafter.jpg); background-size: cover; background-position: center;">
-        <h2>饮湖上初晴后雨</h2>
-        <p class="verse signature">--宋&middot;苏轼</p>
+        <div class="poem-content">
+            <h2>饮湖上初晴后雨</h2>
 
-        <p class="verse verse1">水光潋滟晴方好，</p>
+            <p class="verse signature">--宋&middot;苏轼</p>
 
-        <p class="verse verse2">山色空蒙雨亦奇。</p>
+            <p class="verse verse1">水光潋滟晴方好，</p>
 
-        <p class="verse verse3">欲把西湖比西子，</p>
+            <p class="verse verse2">山色空蒙雨亦奇。</p>
 
-        <p class="verse verse4">淡妆浓抹总相宜。</p>
+            <p class="verse verse3">欲把西湖比西子，</p>
+
+            <p class="verse verse4">淡妆浓抹总相宜。</p>
+        </div>
     </div>
 </div>
 
@@ -163,6 +169,9 @@
                 , k = $(window).height()
                 , callback = function() {
                     $("#j-mengban").hide();
+                    setTimeout(function() {
+                        $(".poem-content").addClass("show");
+                    }, 0);
                 };
 
         var i = new Swip(c, h, i, j, k, callback);
