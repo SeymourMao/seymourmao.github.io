@@ -127,10 +127,7 @@
 </head>
 <body>
 <input id="ca-tips" type="hidden" value="深藏不露，戳我哦" />
-<!-- image cache -->
-<div id="r-cover" cover-img='../images/swipfront.jpg' style="display:none;">
-    <img id="swipfrontimg" src="../images/swipfront.jpg" alt="" />
-</div>
+<input type="hidden" id="r-cover" value='../images/swipfront.jpg' />
 
 <div class="loading"></div>
 
@@ -160,7 +157,7 @@
     window.onload = function() {
         var c = $("#j-mengban")[0]
                 , d = "g"
-                , h = $("#r-cover").attr("cover-img")
+                , h = $("#r-cover").val()
                 , i = "image"
                 , j = $(window).width()
                 , k = $(window).height()
