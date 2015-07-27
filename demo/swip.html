@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+    <title>西子湖畔</title>
+    <style>
+        html, body {
+            position: relative;
+            font-family: "微软雅黑";
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .p-ct {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            -webkit-transition: -webkit-transform 3350ms linear;
+            transition: transform 3350ms linear;
+        }
+
+        .p-ct.hide {
+            -webkit-transform: scale(.0001);
+            transform: scale(.0001);
+        }
+
+        .translate-front {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            -webkit-transition: opacity 1s;
+            transition: opacity 1s;
+        }
+
+        .m-page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9;
+            background: #ddd;
+            opacity: 0;
+            -webkit-transition: opacity 1s ease-in 1s;
+            transition: opacity 1s ease-in 1s;
+        }
+
+        .m-page .page-con {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .lazy-img, .lazy-finish {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top left !important;
+        }
+
+        /*#j-mengban {*/
+            /*-webkit-transition: -webkit-transform 1350ms ease-in;*/
+            /*transition: transform 1350ms ease-in;*/
+            /*perspective: 500px;*/
+            /*-webkit-perspective: 500px;  Safari 和 Chrome*/
+        /*}*/
+
+        /*#j-mengban.hide {*/
+            /*-webkit-transform: scale(.0001) rotate(360deg);*/
+            /*transform: scale(.0001) rotate(540deg);*/
+        /*}*/
+
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            height: 100%;
+            width: 100%;
+            background: #fff url(../images/loading.gif) 50% 45% no-repeat;
+            background-size: 352px 264px;
+        }
+
+        .opacity {
+            opacity: 1;
+        }
+
+        .m-page h2 {
+            width: 65%;
+            text-align: center;
+            margin: 25% auto 5%;
+            color: #e0f7fa;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 700;
+            text-shadow: 1px 1px 1px rgba(224, 247, 250, .8);
+        }
+
+        .m-page p {
+            width: 65%;
+            text-align: center;
+            font-size: 20px;
+            line-height: 1;
+            font-family: "\9ed1\4f53", arial;
+            color: #e0f7fa;
+            margin: 5% auto;
+            font-weight: 700;
+            text-shadow: 1px 1px 1px rgba(224, 247, 250, .8);
+        }
+
+        .m-page p.signature {
+            text-align: right;
+            font-size: 16px;
+            margin: 0 auto 2%;
+        }
+
+
+    </style>
+</head>
+<body>
+<input id="ca-tips" type="hidden" value="深藏不露，戳我哦" />
+<!-- image cache -->
+<div id="r-cover" cover-img='../images/swipfront.jpg' style="display:none;">
+    <img id="swipfrontimg" src="../images/swipfront.jpg" alt="" />
+</div>
+
+<div class="loading"></div>
+
+<div id="j-mengban" class="translate-front" >
+</div>
+<div class="m-page m-fengye">
+    <div class="page-con lazy-finish" style="background-image: url(../images/swipafter.jpg); background-size: cover; background-position: center;">
+        <h2>饮湖上初晴后雨</h2>
+        <p class="verse signature">--宋&middot;苏轼</p>
+
+        <p class="verse verse1">水光潋滟晴方好，</p>
+
+        <p class="verse verse2">山色空蒙雨亦奇。</p>
+
+        <p class="verse verse3">欲把西湖比西子，</p>
+
+        <p class="verse verse4">淡妆浓抹总相宜。</p>
+    </div>
+</div>
+
+
+</body>
+<script src="../js/zepto.js"></script>
+<script src="../js/swip.js"></script>
+<script>
+
+    window.onload = function() {
+        var c = $("#j-mengban")[0]
+                , d = "g"
+                , h = $("#r-cover").attr("cover-img")
+                , i = "image"
+                , j = $(window).width()
+                , k = $(window).height()
+                , callback = function() {
+                    $("#j-mengban").hide();
+                };
+
+        var i = new Swip(c, h, i, j, k, callback);
+        i.init();
+
+       setTimeout(function() {
+           $(".loading").hide();
+           $("#j-mengban").addClass("opacity");
+           $(".m-page").addClass("opacity");
+       }, 2000);
+    }
+
+
+</script>
+</html>
