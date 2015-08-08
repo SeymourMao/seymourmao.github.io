@@ -78,7 +78,7 @@
                                 e = !1;
                             var c = a.getTransparentPercent(a.maskCtx, a.width, a.height);
 
-                            c >= 50 && "function" == typeof a.drawPercentCallback && a.drawPercentCallback()
+                            c >= 30 && "function" == typeof a.drawPercentCallback && a.drawPercentCallback()
                         }
                         , !1)
                 }
