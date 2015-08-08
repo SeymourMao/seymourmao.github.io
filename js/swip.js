@@ -68,7 +68,7 @@
                         a.conNode.addEventListener("touchend", function () {
                                 e = !1;
                                 var b = a.getTransparentPercent(a.maskCtx, a.width, a.height);
-                                b >= 50 && "function" == typeof a.drawPercentCallback && a.drawPercentCallback()
+                                b >= 30 && "function" == typeof a.drawPercentCallback && a.drawPercentCallback()
                             }
                             , !1);
                 else {
