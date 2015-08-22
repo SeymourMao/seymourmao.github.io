@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+    <title>../images/Blind-Image</title>
+    <style>
+        html, body {
+            position: relative;
+            font-family: "微软雅黑";
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .content {
+            margin: 30px auto;
+            max-width: 820px;
+        }
+
+        #blinds {
+            font-size: 0;
+            margin: 0;
+            position: relative;
+            perspective: 1800px;
+            padding-bottom: 84%;
+            transform-style: preserve-3d;
+        }
+
+        #blinds img {
+            top: 0;
+            left: 0;
+            position: absolute;
+            transition: 1s;
+            width: 100%;
+        }
+
+        #blinds {
+            font-size: 0;
+            margin: 0;
+            position: relative;
+            perspective: 1800px;
+            padding-bottom: 84%;
+            transform-style: preserve-3d
+        }
+
+        #blinds img {
+            top: 0;
+            left: 0;
+            position: absolute;
+            transition: 1s;
+            width: 100%
+        }
+
+        #blinds img.first {
+            transform: rotateY(0deg)
+        }
+
+        #blinds img.second {
+            transform: rotateY(-180deg) translateZ(2px)
+        }
+
+        #blinds:hover img.first {
+            transform: rotateY(180deg)
+        }
+
+        #blinds:hover img.second {
+            /*transform: rotateY(0deg) translateZ(2px)*/
+        }
+
+        #blinds img:nth-child(1), #blinds img:nth-child(11) {
+            clip: rect(0px, 82px, 689px, 0px);
+            transform-origin: 41px 0px
+        }
+
+        #blinds img:nth-child(2), #blinds img:nth-child(12) {
+            clip: rect(0px, 164px, 689px, 82px);
+            transform-origin: 123px 0px;
+            transition-delay: 100ms
+        }
+
+        #blinds img:nth-child(3), #blinds img:nth-child(13) {
+            clip: rect(0px, 264px, 689px, 164px);
+            transform-origin: 205px 0px;
+            transition-delay: 200ms
+        }
+
+        #blinds img:nth-child(4), #blinds img:nth-child(14) {
+            clip: rect(0px, 346px, 689px, 264px);
+            transform-origin: 305px 0px;
+            transition-delay: 300ms
+        }
+
+        #blinds img:nth-child(5), #blinds img:nth-child(15) {
+            clip: rect(0px, 428px, 689px, 346px);
+            transform-origin: 387px 0px;
+            transition-delay: 400ms
+        }
+
+        #blinds img:nth-child(6), #blinds img:nth-child(16) {
+            clip: rect(0px, 510px, 689px, 428px);
+            transform-origin: 469px 0px;
+            transition-delay: 500ms
+        }
+
+        #blinds img:nth-child(7), #blinds img:nth-child(17) {
+            clip: rect(0px, 592px, 689px, 510px);
+            transform-origin: 551px 0px;
+            transition-delay: 600ms
+        }
+
+        #blinds img:nth-child(8), #blinds img:nth-child(18) {
+            clip: rect(0px, 674px, 689px, 592px);
+            transform-origin: 633px 0px;
+            transition-delay: 700ms
+        }
+
+        #blinds img:nth-child(9), #blinds img:nth-child(19) {
+            clip: rect(0px, 756px, 689px, 674px);
+            transform-origin: 715px 0px;
+            transition-delay: 800ms
+        }
+
+        #blinds img:nth-child(10), #blinds img:nth-child(20) {
+            clip: rect(0px, 820px, 689px, 756px);
+            transform-origin: 779px 0px;
+            transition-delay: 900ms
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="content">
+    <div id="blinds">
+        <img src="../images/blind-one.jpg" alt="" class="first">
+        <img src="../images/blind-one.jpg" alt="" class="first">
+        <img src="../images/blind-one.jpg" alt="" class="first">
+        <img src="../images/blind-one.jpg" alt="" class="first">
+        <img src="../images/blind-one.jpg" alt="" class="first">
+        <img src="../images/blind-one.jpg" alt="" class="first">
+        <img src="../images/blind-one.jpg" alt="" class="first">
+        <img src="../images/blind-one.jpg" alt="" class="first">
+        <img src="../images/blind-one.jpg" alt="" class="first">
+        <img src="../images/blind-one.jpg" alt="" class="first">
+        <img src="../images/blind-two.jpg" alt="" class="second">
+        <img src="../images/blind-two.jpg" alt="" class="second">
+        <img src="../images/blind-two.jpg" alt="" class="second">
+        <img src="../images/blind-two.jpg" alt="" class="second">
+        <img src="../images/blind-two.jpg" alt="" class="second">
+        <img src="../images/blind-two.jpg" alt="" class="second">
+        <img src="../images/blind-two.jpg" alt="" class="second">
+        <img src="../images/blind-two.jpg" alt="" class="second">
+        <img src="../images/blind-two.jpg" alt="" class="second">
+        <img src="../images/blind-two.jpg" alt="" class="second">
+    </div>
+</div>
+
+<img src="../images/blind-one.jpg" alt="" class="second"><img src="../images/blind-one.jpg" alt="" class="second">
+
+
+</body>
+<script src="../build/zepto.js"></script>
+<script src="../build/swip.js"></script>
+<script>
+
+
+
+
+</script>
+</html>

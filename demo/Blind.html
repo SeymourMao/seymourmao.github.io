@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+    <title>../images/Blind-Image</title>
+    <style>
+        html, body {
+            position: relative;
+            font-family: "微软雅黑";
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            width: 100%;
+            text-align: center;
+        }
+
+        .content {
+        }
+
+
+
+        .item {
+            position: relative;
+            float: left;
+            width: 20%;
+            padding-top: 20%;
+            box-sizing: border-box;
+            perspective: 1800px;
+            transform-style: preserve-3d;
+        }
+
+
+        .inner {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border: 10px solid white;
+            box-sizing: border-box;
+            border-radius: 50%;
+            -webkit-transition: transform .5s;
+            transition: transform .5s;
+        }
+
+        .item .inner.inner1 {
+            transition-delay: 100ms
+        }
+
+        .item .inner.inner2 {
+            transition-delay: 200ms
+        }
+
+        .item .inner.inner3 {
+            transition-delay: 300ms
+        }
+
+        .item .inner.inner4 {
+            transition-delay: 400ms
+        }
+
+        .item .inner.inner5 {
+            transition-delay: 500ms
+        }
+
+        .back, .rotate-180 {
+            transform: rotateY(-180deg) translateZ(2px)
+        }
+
+        .front, .rotate0 {
+            transform: rotateY(0deg)
+        }
+
+
+        .hide, .rotate180 {
+            transform: rotateY(180deg)
+        }
+
+        .show {
+            transform: rotateY(0deg) translateZ(2px)
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: green;
+            outline: none;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        span {
+            position: absolute;
+            color: white;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            left: 50%;
+            margin-top: -10px;
+            margin-left: -10px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div style="display:none;">
+    <img src="../images/interaction.jpg" />
+</div>
+<div class="content">
+    <div class="item ">
+        <a class="inner inner1 front rotate0 active" style="background-color: red;"><span>1</span></a>
+        <a class="inner inner1 back rotate-180" style="background-color: green;"><span>2</span></a>
+    </div>
+    <div class="item ">
+        <a class="inner inner2 front rotate0 active" style="background-color: red;"><span>1</span></a>
+        <a class="inner inner2 back rotate-180" style="background-color: green;"><span>2</span></a>
+    </div>
+    <div class="item ">
+        <a class="inner inner3 front rotate0 active" style="background-color: red;"><span>1</span></a>
+        <a class="inner inner3 back rotate-180" style="background-color: green;"><span>2</span></a>
+    </div>
+    <div class="item ">
+        <a class="inner inner4 front rotate0 active" style="background-color: red;"><span>1</span></a>
+        <a class="inner inner4 back rotate-180" style="background-color: green;"><span>2</span></a>
+    </div>
+    <div class="item ">
+        <a class="inner inner5 front rotate0 active" style="background-color: red;"><span>1</span></a>
+        <a id="last-inner" class="inner inner5 back rotate-180" style="background-color: green;"><span>2</span></a>
+    </div>
+</div>
+
+<button id="btn">换一换</button>
+
+
+</body>
+<script src="../build/zepto.js"></script>
+<script src="../build/swip.js"></script>
+<script>
+
+    var idx = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
+    function getBg() {
+        var c = ["#"];
+        for (var i = 0; i < 6; i++) {
+            c.push(idx[Math.ceil(Math.random() * 15)]);
+        }
+        return c.join("");
+    }
+
+    var animating = false;
+    var items = $(".item");
+
+    function change() {
+        if (animating) return;
+        animating = true;
+        setTimeout(function() {
+            animating = false;
+        }, 1000);
+
+        for (var i = 0, len = items.length; i < len; i++) {
+            var front = $(".front", items[i]) ;
+            var back = $(".back", items[i]);
+
+            if (front.hasClass('rotate0')) {
+                front.removeClass('rotate0').addClass('rotate180');
+            } else {
+                front.removeClass('rotate180').addClass('rotate0');
+            }
+
+            if (back.hasClass('rotate0')) {
+                back.removeClass('rotate0').addClass('rotate-180');
+            } else {
+                back.removeClass('rotate-180').addClass('rotate0');
+            }
+        }
+    }
+
+
+    document.getElementById("btn").addEventListener("click", function() {
+        change();
+    },false);
+
+    document.getElementById("last-inner").addEventListener("webkitTransitionEnd", function() {
+//        alert("last end")
+        for (var i = 0, len = items.length; i < len; i++) {
+            var front = $(".front", items[i]);
+            var back = $(".back", items[i]);
+            if (front.hasClass('active')) {
+                front.removeClass('active').css("backgroundColor", getBg());
+                back.addClass('active');
+            } else {
+                back.removeClass('active').css("backgroundColor", getBg());
+                front.addClass('active');
+            }
+        }
+    },false);
+
+
+//    change();
+
+</script>
+</html>
