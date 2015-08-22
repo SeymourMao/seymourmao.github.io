@@ -185,6 +185,14 @@
             } else {
                 back.removeClass('rotate-180').addClass('rotate0');
             }
+
+            if (front.hasClass('active')) {
+                front.removeClass('active').css("backgroundColor", getBg());
+                back.addClass('active');
+            } else {
+                back.removeClass('active').css("backgroundColor", getBg());
+                front.addClass('active');
+            }
         }
     }
 
@@ -194,18 +202,18 @@
     },false);
 
     document.getElementById("last-inner").addEventListener("webkitTransitionEnd", function() {
-//        alert("last end")
-        for (var i = 0, len = items.length; i < len; i++) {
-            var front = $(".front", items[i]);
-            var back = $(".back", items[i]);
-            if (front.hasClass('active')) {
-                front.removeClass('active').css("backgroundColor", getBg());
-                back.addClass('active');
-            } else {
-                back.removeClass('active').css("backgroundColor", getBg());
-                front.addClass('active');
-            }
-        }
+////        alert("last end")
+//        for (var i = 0, len = items.length; i < len; i++) {
+//            var front = $(".front", items[i]);
+//            var back = $(".back", items[i]);
+//            if (front.hasClass('active')) {
+//                front.removeClass('active').css("backgroundColor", getBg());
+//                back.addClass('active');
+//            } else {
+//                back.removeClass('active').css("backgroundColor", getBg());
+//                front.addClass('active');
+//            }
+//        }
     },false);
 
 
