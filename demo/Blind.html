@@ -40,7 +40,7 @@
             border: 5px solid white;
             box-sizing: border-box;
             border-radius: 50%;
-            -webkit-transition: transform 1s;
+            -webkit-transition: -webkit-transform 1s;
             transition: transform 1s;
         }
 
@@ -199,7 +199,9 @@
 
     document.getElementById("btn").addEventListener("click", function() {
         setValue();
-        change();
+        setTimeout(function() {
+            change();
+        },0);
     },false);
 
     function setValue() {
