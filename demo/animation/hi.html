@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Hi Animation</title>
+    <style>
+        .hi {
+            width: 25px;
+            height: 36px;
+            /*width: 50px;*/
+            /*height: 72px;*/
+            background-image: url("../../images/hi-sprite-steps.png");
+            background-size: 250px 36px;
+            background-position-y: 0;
+            /*background-position-x: -50px;*/
+
+        }
+
+        .animation {
+
+            animation: play 1s steps(9) forwards;
+            /*animation: play 2s steps(10) forwards;*/
+
+        }
+
+        @keyframes play {
+            /*0%, 10% {*/
+                /*background-position-x: 0;*/
+            /*}*/
+
+            /*10.001%, 20% {*/
+                /*background-position-x: -50px;*/
+            /*}*/
+            /*20.001%, 30% {*/
+                /*background-position-x: -100px;*/
+            /*}*/
+            /*30.001%, 40% {*/
+                /*background-position-x: -150px;*/
+            /*}*/
+            /*40.001%, 50% {*/
+                /*background-position-x: -200px;*/
+            /*}*/
+
+           /*50.001%, 60% {*/
+                /*background-position-x: -250px;*/
+            /*}*/
+
+           /*60.001%, 70% {*/
+                /*background-position-x: -300px;*/
+            /*}*/
+
+           /*70.001%, 80% {*/
+                /*background-position-x: -350px;*/
+            /*}*/
+
+           /*80.001%, 90% {*/
+                /*background-position-x: -400px;*/
+            /*}*/
+
+           /*90.001%, 100% {*/
+                /*background-position-x: -450px;*/
+            /*}*/
+
+            from {
+                background-position-x: 0;
+            }
+            to {
+                background-position-x: -225px;
+            }
+
+        }
+
+        /*@keyframes play {*/
+            /*from {*/
+                /*background-position: 0px;*/
+            /*}*/
+            /*to {*/
+                /*background-position: -500px;*/
+            /*}*/
+        /*}*/
+
+        #play {
+            outline: none;
+            border: none;
+            background-color: green;
+            padding: 10px 25px;
+            border-radius: 5px;
+            color: white;
+            font-size: 17px;
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<img src="../../images/hi-sprite-steps.png" />
+
+<div class="hi" id="hi"></div>
+
+<ul id="output" style="margin-top: 30px;"></ul>
+<button id="play">Play</button>
+
+</body>
+<script src="../../build/zepto.js"></script>
+<script src="../../js/event.js"></script>
+<script>
+    function setup() {
+        var e = document.getElementById("hi");
+        e.addEventListener("animationstart", listener, false);
+        e.addEventListener("animationend", listener, false);
+        e.addEventListener("animationiteration", listener, false);
+
+//        e.className = "slidein";
+    }
+
+    function listener(e) {
+        var l = document.createElement("li");
+        switch (e.type) {
+            case "animationstart":
+                l.innerHTML = "Started: elapsed time is " + e.elapsedTime;
+                break;
+            case "animationend":
+                l.innerHTML = "Ended: elapsed time is " + e.elapsedTime;
+                break;
+            case "animationiteration":
+                l.innerHTML = "New loop started at time " + e.elapsedTime;
+                break;
+        }
+        document.getElementById("output").appendChild(l);
+    }
+
+    setup();
+
+    $('#play').on("click", function() {
+        $(".hi").toggleClass("animation");
+    });
+</script>
+</html>

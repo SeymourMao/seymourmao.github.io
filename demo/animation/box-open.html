@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+    <title>3D</title>
+    <style>
+        html, body {
+            position: relative;
+            font-family: "微软雅黑";
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+
+
+        @keyframes spin {
+            0%{
+                background-image: url(http://gtms04.alicdn.com/tps/i4/TB17EuqJFXXXXbGXpXX7WcCNVXX-400-400.png);
+            }
+            25% {
+                background-image: url(http://gtms03.alicdn.com/tps/i3/TB1keGjJFXXXXbRXFXX7WcCNVXX-400-400.png);
+            }
+            50% {
+                background-image: url(http://gtms02.alicdn.com/tps/i2/TB15L1BJFXXXXXHXXXX7WcCNVXX-400-400.png);
+            }
+            75% {
+                background-image: url(http://gtms01.alicdn.com/tps/i1/TB1dmSrJFXXXXaTXpXX7WcCNVXX-400-400.png);
+            }
+            100% {
+                background-image: url(http://gtms04.alicdn.com/tps/i4/TB1Q21zJFXXXXbDXXXX7WcCNVXX-400-400.png);
+            }
+            0% {
+                background-image: url(http://gtms04.alicdn.com/tps/i4/TB17EuqJFXXXXbGXpXX7WcCNVXX-400-400.png);
+            }
+            25% {
+                background-image: url(http://gtms03.alicdn.com/tps/i3/TB1keGjJFXXXXbRXFXX7WcCNVXX-400-400.png);
+            }
+            50% {
+                background-image: url(http://gtms02.alicdn.com/tps/i2/TB15L1BJFXXXXXHXXXX7WcCNVXX-400-400.png);
+            }
+            75% {
+                background-image: url(http://gtms01.alicdn.com/tps/i1/TB1dmSrJFXXXXaTXpXX7WcCNVXX-400-400.png);
+            }
+            100% {
+                background-image: url(http://gtms04.alicdn.com/tps/i4/TB1Q21zJFXXXXbDXXXX7WcCNVXX-400-400.png);
+            }
+            /*0%, 20% {*/
+                /*background-image: url(http://gtms04.alicdn.com/tps/i4/TB17EuqJFXXXXbGXpXX7WcCNVXX-400-400.png);*/
+            /*}*/
+            /*20.01%, 40% {*/
+                /*background-image: url(http://gtms03.alicdn.com/tps/i3/TB1keGjJFXXXXbRXFXX7WcCNVXX-400-400.png);*/
+            /*}*/
+            /*40.01%, 60% {*/
+                /*background-image: url(http://gtms02.alicdn.com/tps/i2/TB15L1BJFXXXXXHXXXX7WcCNVXX-400-400.png);*/
+            /*}*/
+            /*60.01%, 80% {*/
+                /*background-image: url(http://gtms01.alicdn.com/tps/i1/TB1dmSrJFXXXXaTXpXX7WcCNVXX-400-400.png);*/
+            /*}*/
+            /*80.01%, 100% {*/
+                /*background-image: url(http://gtms04.alicdn.com/tps/i4/TB1Q21zJFXXXXbDXXXX7WcCNVXX-400-400.png);*/
+            /*}*/
+        }
+
+        .stage {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: rgba(0, 0, 0, .8);
+
+            -webkit-perspective: 1200px;
+            -moz-perspective: 1200px;
+            -ms-perspective: 1200px;
+            -o-perspective: 1200px;
+            perspective: 1200px;
+        }
+
+        .container {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            margin-top: -100px;
+            left: 50%;
+            margin-left: -100px;
+            /*background-color: #eee;*/
+            -webkit-background-size: 200px;
+            background-size: 200px;
+            background-position: center;
+            background-repeat: no-repeat;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+            -o-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        }
+
+        .container:hover {
+            -webkit-animation: spin 1s linear 1 forwards;
+            animation: spin 1s linear 1 forwards;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="stage s1">
+    <div class="container">
+    </div>
+</div>
+
+
+</body>
+<script src="../../build/zepto.js"></script>
+<script src="../../build/swip.js"></script>
+<script>
+
+
+
+
+</script>
+</html>

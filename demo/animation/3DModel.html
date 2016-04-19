@@ -12,6 +12,7 @@
             height: 100%;
             margin: 0 auto;
             width: 100%;
+            color: white;
         }
 
         .stage {
@@ -88,6 +89,22 @@
             transform: rotate3d(.6, 1, .6, 45deg);
         }
 
+        .s5 img:nth-child(2) {
+            z-index: 2;
+            -webkit-transform: skewY(30deg);
+            transform: skewY(30deg);
+        }
+        .s6 img:nth-child(2) {
+            z-index: 2;
+            -webkit-transform: skewX(30deg);
+            transform: skewX(30deg);
+        }
+        .s7 img:nth-child(2) {
+            z-index: 2;
+            -webkit-transform: skew(30deg, 30deg);
+            transform: skew(30deg, 30deg);
+        }
+
 
     </style>
 </head>
@@ -125,10 +142,38 @@
     </div>
 </div>
 
+<div class="stage s5">
+    <div class="container">
+        <img src="http://www.w3cplus.com/sites/default/files/blogs/2013/1311/cardKingClub.png" alt="" width="140"
+             height="200" />
+        <img src="http://www.w3cplus.com/sites/default/files/blogs/2013/1311/cardKingClub.png" alt="" width="140"
+             height="200" />
+    </div>
+    <div>skewY</div>
+</div>
+<div class="stage s6">
+    <div class="container">
+        <img src="http://www.w3cplus.com/sites/default/files/blogs/2013/1311/cardKingClub.png" alt="" width="140"
+             height="200" />
+        <img src="http://www.w3cplus.com/sites/default/files/blogs/2013/1311/cardKingClub.png" alt="" width="140"
+             height="200" />
+    </div>
+    <div>skewX</div>
+</div>
+<div class="stage s7">
+    <div class="container">
+        <img src="http://www.w3cplus.com/sites/default/files/blogs/2013/1311/cardKingClub.png" alt="" width="140"
+             height="200" />
+        <img src="http://www.w3cplus.com/sites/default/files/blogs/2013/1311/cardKingClub.png" alt="" width="140"
+             height="200" />
+    </div>
+    <div>skewXY</div>
+</div>
+
 
 </body>
-<script src="../build/zepto.js"></script>
-<script src="../build/swip.js"></script>
+<script src="../../build/zepto.js"></script>
+<script src="../../build/swip.js"></script>
 <script>
 
 
